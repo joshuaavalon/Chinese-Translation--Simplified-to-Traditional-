@@ -1,13 +1,15 @@
 // ==UserScript==
 // @name         Chinese Translation (Simplified to Traditional)
-// @version      1.0
+// @version      1.2
 // @description  Replace simplified Chinese to traditional Chinese
 // @author       Avalon Joshua
 // @match        http://*/*
 // @match        https://*/*
 // @namespace    https://greasyfork.org/users/23318
-// @license        GPL v2
+// @license      GPL v2
 // ==/UserScript==
+var updateTimeOut = 1000;
+
 var TongWen = {};
 TongWen.s_2_t = {
 "\u00b7":"\u2027", 
@@ -2583,3 +2585,21 @@ function convert_trad(){
 }
 
 convert_trad();
+
+var changed = false;
+
+MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+
+var observer = new MutationObserver(function(mutations, observer) {
+    if(changed) return;
+    changed = true;
+    setTimeout(function(){
+        convert_trad();
+        changed = false;
+    }, updateTimeOut);    
+});
+
+observer.observe(document, {
+  subtree: true,
+  attributes: true
+});
