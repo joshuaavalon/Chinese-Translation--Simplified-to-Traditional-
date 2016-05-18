@@ -4,6 +4,7 @@
 // @description  Replace simplified Chinese to traditional Chinese
 // @author       Avalon Joshua
 // @match        http://*/*
+// @match        https://*/*
 // @namespace    https://greasyfork.org/users/23318
 // @license        GPL v2
 // ==/UserScript==
