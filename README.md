@@ -1,5 +1,5 @@
-# JapaneseTitlesforMAL_NoCache
-Japanese Titles for MAL: https://greasyfork.org/en/scripts/19778-chinese-translation-simplified-to-traditional
+# Chinese Translation (Simplified to Traditional)
+Chinese Translation (Simplified to Traditional): https://greasyfork.org/en/scripts/19778-chinese-translation-simplified-to-traditional
 
 #### Description
 Replace simplified Chinese to traditional Chinese
