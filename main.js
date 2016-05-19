@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Chinese Translation (Simplified to Traditional)
-// @version      1.3
+// @version      1.4
 // @description  Replace simplified Chinese to traditional Chinese
 // @author       Avalon Joshua
 // @match        http://*/*
@@ -10,6 +10,10 @@
 // ==/UserScript==
 var updateTimeOut = 1000;
 var enableSymbolReplacement = false;
+var enableLanguageDetect = true;
+
+if(enableLanguageDetect)
+    if(document.documentElement.hasAttribute("lang")&&!document.documentElement.lang!="zh-Hans") return;
 
 var characterList = {
     "\u359e": "\u558e",
